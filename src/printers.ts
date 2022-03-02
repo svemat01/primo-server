@@ -5,10 +5,25 @@ import { PrinterListType } from './types/printerInfo';
 // http://192.168.16.38, needs password
 // 192.168.16.44 unknown ink status
 // http://192.168.16.47/ unknown login
+// https://192.168.16.56/ https error
+// https://192.168.16.60/ https error
 
 // TODO: CONTINUE WITH AND FROM https://192.168.16.56/
 
 export const printers: PrinterListType = {
+    'AR-M351N': {
+        printers: [
+            {
+                name: 'VAL-11-SFI-CKOP',
+                url: 'http://192.168.16.62/machine_status.html',
+            },
+        ],
+        elements: {
+            black: '.msts:nth-child(10) tr:nth-child(1) > td:nth-child(2)',
+        },
+        emulate: false,
+    },
+
     // #region Brother printers
     'MFC-J6720DW': {
         printers: [
