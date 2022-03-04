@@ -15,6 +15,5 @@
     "env": {
         "node": true
     },
-    "rules": {
-    }
+    "rules": {}
 }

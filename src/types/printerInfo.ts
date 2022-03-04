@@ -12,11 +12,15 @@ import { ElementHandle, Page } from 'puppeteer';
 
 type PrinterBasicType = {
     elements: {
+        // eslint-disable-next-line unused-imports/no-unused-vars
         [K in PrinterColorType]?: string;
     };
+    // eslint-disable-next-line unused-imports/no-unused-vars
     prepareColor?: (input: string) => string;
     // preparePart?: (input: string) => string;
+    // eslint-disable-next-line unused-imports/no-unused-vars
     preparePage?: (page: Page) => Promise<void>;
+    // eslint-disable-next-line unused-imports/no-unused-vars
     colorInterpreter?: (element: ElementHandle) => Promise<string>;
 };
 
@@ -48,6 +52,7 @@ export type FieldSelectorType = {
 
 export type InkStatusType =
     | {
+          // eslint-disable-next-line unused-imports/no-unused-vars
           [key in PrinterColorType]?: number;
       }
     | undefined;
@@ -55,6 +60,11 @@ export type InkStatusType =
 export type PrinterStatusType = {
     [key: string]: {
         type: string;
-        colors: InkStatusType;
+        colors?: InkStatusType;
     };
+};
+
+export type OutputType = {
+    updatedAt: Date;
+    data: PrinterStatusType;
 };
